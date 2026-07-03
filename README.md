@@ -1,4 +1,4 @@
-# ali-aman.ca — Site Content
+# Portfolio Site V2 Content:
 
 Site title: **Ali Aman - Researcher**
 Meta description: Software Researcher passionate about solving real-world problems. Explore my portfolio featuring projects and skills I've developed over the years.
