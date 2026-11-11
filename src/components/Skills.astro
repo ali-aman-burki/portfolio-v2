@@ -1,0 +1,26 @@
+---
+import skills from '../data/skills.json';
+---
+<section id="skills">
+	<div class="content">
+		<h1 class="reveal">Skills</h1>
+		<h2 class="description reveal">Skills I have acquired by working on personal and school projects.</h2>
+		<div class="grid">
+			{skills.map((cat) => (
+				<div class="card skill-card reveal">
+					<h2><span>{cat.title}</span><i class={cat.icon}></i></h2>
+					<div class="items">
+						{cat.items.map((it) => (
+							<div class="item">
+								<h3><i class={it.icon} style={it.color ? `color:${it.color}` : undefined}></i><span>{it.name}</span></h3>
+								<div class="progress-dots" role="img" aria-label={`${it.level} out of 5`}>
+									{[1, 2, 3, 4, 5].map((n) => <div class:list={['dot', { active: n <= it.level }]}></div>)}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

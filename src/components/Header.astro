@@ -1,0 +1,27 @@
+---
+import { site } from '../data/site';
+---
+<header class="header" id="header">
+	<div class="navbar">
+		<a href="/" class="logo">ali <span class="last">aman</span></a>
+		<nav class="links">
+			{site.nav.map((l) => <a href={l.href}>{l.label}</a>)}
+		</nav>
+		<div class="sm_links">
+			{site.social.map((s) => (
+				<a href={s.href} aria-label={s.label} target={s.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"><i class={s.icon}></i></a>
+			))}
+		</div>
+		<button id="menu-bar" class="menu-bar" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+	</div>
+</header>
+<aside class="sidebar" id="sidebar">
+	<nav class="links">
+		{site.nav.map((l) => <a href={l.href}>{l.label}</a>)}
+	</nav>
+	<div class="sm_links">
+		{site.social.map((s) => (
+			<a href={s.href} aria-label={s.label} target={s.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"><i class={s.icon}></i></a>
+		))}
+	</div>
+</aside>

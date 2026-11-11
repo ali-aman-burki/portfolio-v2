@@ -1,17 +1,15 @@
 ---
-
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Publications from '../components/Publications.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Ali Aman</title>
-	</head>
-	<body>
-		<h1>Ali Aman</h1>
-	</body>
-</html>
+<Base>
+	<Hero />
+	<Publications />
+	<Projects />
+	<Skills />
+	<Contact />
+</Base>

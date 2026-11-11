@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+const { title = 'Ali Aman - Researcher' } = Astro.props;
+const description = "Software Researcher passionate about solving real-world problems. Explore my portfolio featuring projects and skills I've developed over the years.";
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://ali-aman.ca/" />
+		<meta property="og:image" content="/images/og-image.png" />
+		<meta property="og:description" content="My projects and skills showcase." />
+		<meta property="og:site_name" content="Ali Aman" />
+		<link rel="icon" href="/images/logo.png" type="image/png" />
+		<link rel="apple-touch-icon" href="/images/apple-touch-logo.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-MJ246RM1DP"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'G-MJ246RM1DP');
+		</script>
+	</head>
+	<body>
+		<Header />
+		<main><slot /></main>
+		<script>
+			const header = document.getElementById('header')!;
+			const sidebar = document.getElementById('sidebar')!;
+			const menu = document.getElementById('menu-bar')!;
+			const sections = [...document.querySelectorAll<HTMLElement>('main section')];
+			const navLinks = [...document.querySelectorAll<HTMLAnchorElement>('.links a')];
+
+			const setSidebar = (open: boolean) => {
+				sidebar.classList.toggle('active', open);
+				menu.setAttribute('aria-expanded', String(open));
+				document.body.style.overflow = open ? 'hidden' : '';
+				update();
+			};
+			menu.addEventListener('click', () => setSidebar(!sidebar.classList.contains('active')));
+			sidebar.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setSidebar(false)));
+			window.addEventListener('resize', () => window.innerWidth >= 650 && setSidebar(false));
+
+			function update() {
+				header.classList.toggle('active', window.scrollY > 0 || sidebar.classList.contains('active'));
+				const y = window.scrollY + 150;
+				const current = sections.findLast((s) => s.offsetTop <= y)?.id;
+				navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+			}
+			window.addEventListener('scroll', update, { passive: true });
+			update();
+
+			const io = new IntersectionObserver((entries) => {
+				entries.forEach((e) => {
+					if (e.isIntersecting) {
+						e.target.classList.add('in');
+						io.unobserve(e.target);
+					}
+				});
+			}, { threshold: 0.1 });
+			document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+const years = year > site.startYear ? `${site.startYear}-${year}` : `${site.startYear}`;
+---
+<section id="contact">
+	<div class="content">
+		<h1 class="reveal">Contact</h1>
+		<div class="sub-container reveal">
+			<i id="icon" class="fa-solid fa-paper-plane"></i>
+			<h3 class="h-text">Say Hello or Connect</h3>
+			<p class="c-text">I look forward to hearing from you! I am always open to exploring opportunities or simply connecting and exchanging ideas.</p>
+			<div class="links">
+				<a href={`mailto:${site.email}`} class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Message</a>
+				<a href="https://linkedin.com/in/ali-aman-burki" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> Connect</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<h2>ali-aman.ca</h2>
+			<p>© {years} Ali Aman. All rights reserved.</p>
+			<p class="small">Font: Quicksand from Google Fonts. Icons by Font Awesome and Devicon.</p>
+		</footer>
+	</div>
+</section>

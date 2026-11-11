@@ -1,0 +1,260 @@
+[
+ {
+  "title": "Programming",
+  "icon": "fa-solid fa-code",
+  "items": [
+   {
+    "name": "Java",
+    "icon": "devicon-java-plain colored",
+    "color": null,
+    "level": 5
+   },
+   {
+    "name": "C",
+    "icon": "devicon-c-plain",
+    "color": "#46a8e0",
+    "level": 4
+   },
+   {
+    "name": "C++",
+    "icon": "devicon-cplusplus-plain",
+    "color": "#6681fa",
+    "level": 3
+   },
+   {
+    "name": "C#",
+    "icon": "devicon-csharp-plain",
+    "color": "#b463cf",
+    "level": 3
+   },
+   {
+    "name": "Python",
+    "icon": "devicon-python-plain colored",
+    "color": null,
+    "level": 4
+   },
+   {
+    "name": "JavaScript",
+    "icon": "devicon-javascript-plain colored",
+    "color": null,
+    "level": 4
+   }
+  ]
+ },
+ {
+  "title": "Development",
+  "icon": "fa-solid fa-terminal",
+  "items": [
+   {
+    "name": "Linux",
+    "icon": "fa-brands fa-linux",
+    "color": "#d9a400",
+    "level": 3
+   },
+   {
+    "name": "VS Code",
+    "icon": "devicon-vscode-plain colored",
+    "color": null,
+    "level": 4
+   },
+   {
+    "name": "Eclipse",
+    "icon": "devicon-eclipse-plain",
+    "color": "#7a6eff",
+    "level": 5
+   },
+   {
+    "name": "IntelliJ",
+    "icon": "devicon-intellij-plain colored",
+    "color": null,
+    "level": 3
+   },
+   {
+    "name": "Android Studio",
+    "icon": "devicon-androidstudio-plain colored",
+    "color": "rgb(42, 187, 54)",
+    "level": 4
+   },
+   {
+    "name": "Git",
+    "icon": "fa-brands fa-git",
+    "color": "#ff9933",
+    "level": 3
+   }
+  ]
+ },
+ {
+  "title": "Machine Learning & AI",
+  "icon": "fa-solid fa-brain",
+  "items": [
+   {
+    "name": "PyTorch",
+    "icon": "devicon-pytorch-original colored",
+    "color": null,
+    "level": 3
+   },
+   {
+    "name": "scikit-learn",
+    "icon": "devicon-scikitlearn-plain colored",
+    "color": null,
+    "level": 3
+   },
+   {
+    "name": "TensorFlow",
+    "icon": "devicon-tensorflow-original colored",
+    "color": null,
+    "level": 3
+   },
+   {
+    "name": "NumPy",
+    "icon": "devicon-numpy-plain colored",
+    "color": null,
+    "level": 4
+   },
+   {
+    "name": "Pandas",
+    "icon": "devicon-pandas-plain",
+    "color": "#3b82f6",
+    "level": 4
+   }
+  ]
+ },
+ {
+  "title": "Web",
+  "icon": "fa-solid fa-globe",
+  "items": [
+   {
+    "name": "HTML",
+    "icon": "devicon-html5-plain colored",
+    "color": null,
+    "level": 5
+   },
+   {
+    "name": "React",
+    "icon": "fa-brands fa-react",
+    "color": "#36abff",
+    "level": 3
+   },
+   {
+    "name": "CSS",
+    "icon": "devicon-css3-plain colored",
+    "color": null,
+    "level": 5
+   },
+   {
+    "name": "JavaScript",
+    "icon": "devicon-javascript-plain colored",
+    "color": null,
+    "level": 4
+   },
+   {
+    "name": "PHP",
+    "icon": "devicon-php-plain colored",
+    "color": null,
+    "level": 2
+   },
+   {
+    "name": "Spring Boot",
+    "icon": "devicon-spring-plain colored",
+    "color": null,
+    "level": 2
+   }
+  ]
+ },
+ {
+  "title": "Tools",
+  "icon": "fa-solid fa-wrench",
+  "items": [
+   {
+    "name": "Swing",
+    "icon": "devicon-java-plain colored",
+    "color": null,
+    "level": 5
+   },
+   {
+    "name": "Thymeleaf",
+    "icon": "devicon-spring-plain colored",
+    "color": null,
+    "level": 2
+   },
+   {
+    "name": "Docker",
+    "icon": "devicon-docker-plain colored",
+    "color": null,
+    "level": 3
+   },
+   {
+    "name": "Maven",
+    "icon": "devicon-maven-plain colored",
+    "color": null,
+    "level": 5
+   },
+   {
+    "name": "Gradle",
+    "icon": "devicon-gradle-plain",
+    "color": "#14a58a",
+    "level": 3
+   }
+  ]
+ },
+ {
+  "title": "Productivity",
+  "icon": "fa-solid fa-cube",
+  "items": [
+   {
+    "name": "MS Word",
+    "icon": "fa-solid fa-file-word",
+    "color": "#5482ff",
+    "level": 5
+   },
+   {
+    "name": "MS PowerPoint",
+    "icon": "fa-solid fa-file-powerpoint",
+    "color": "#ed7437",
+    "level": 5
+   },
+   {
+    "name": "MS Excel",
+    "icon": "fa-solid fa-file-excel",
+    "color": "#35b062",
+    "level": 3
+   },
+   {
+    "name": "Trello",
+    "icon": "devicon-trello-plain colored",
+    "color": "#0079BF",
+    "level": 4
+   }
+  ]
+ },
+ {
+  "title": "Creativity",
+  "icon": "fa-solid fa-pen-nib",
+  "items": [
+   {
+    "name": "Adobe PS",
+    "icon": "devicon-photoshop-plain",
+    "color": "#0593ff",
+    "level": 4
+   },
+   {
+    "name": "Paint.NET",
+    "icon": "fa-solid fa-paintbrush",
+    "color": "#0891b2",
+    "level": 5
+   },
+   {
+    "name": "Gimp",
+    "icon": "devicon-gimp-plain colored",
+    "color": null,
+    "level": 3
+   },
+   {
+    "name": "Godot",
+    "icon": "devicon-godot-plain colored",
+    "color": null,
+    "level": 5
+   }
+  ]
+ }
+]
