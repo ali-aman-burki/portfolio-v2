@@ -1,8 +1,55 @@
+---
+import { publications, myName } from '../data/publications';
+
+const btn = 'pub-btn';
+---
 <section id="publications">
 	<div class="content">
 		<h1 class="reveal">Publications</h1>
-		<div class="pub-placeholder reveal">
-			<p>Coming soon!</p>
+		<h2 class="description reveal">Research and papers I have authored so far.</h2>
+		<div class="timeline reveal">
+			{publications.map((group, gi) => (
+				<>
+					<div class="yr">{group.year}</div>
+					{group.items.map((p, i) => (
+						<details open={gi === 0 && i === 0}>
+							<summary>
+								<div>
+									<p class="pub-title">{p.title}</p>
+									<p class="pub-authors">
+										{p.authors.map((a, n) => (
+											<>
+												{a === myName ? <b>{a}</b> : a}
+												{n < p.authors.length - 1 && ', '}
+											</>
+										))}
+									</p>
+									<div class="pub-meta">
+										<span class="venue-pill">{p.conference.acronym}</span>
+										<span class="track">{p.track}</span>
+									</div>
+								</div>
+								<i class="fa-solid fa-chevron-down chev"></i>
+							</summary>
+							<div class="more">
+								<p class="abs">{p.abstract}</p>
+								<div class="pubin">
+									<div class="row"><i class="fa-solid fa-book-open"></i><span><b>{p.conference.name}</b> ({p.conference.acronym})</span></div>
+									<div class="row"><i class="fa-solid fa-location-dot"></i><span>{p.conference.location} · {p.conference.dates}</span></div>
+								</div>
+								<div class="pub-links">
+									{p.pdf
+										? <a class={btn} href={p.pdf} target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+										: <span class={`${btn} disabled`} aria-disabled="true" title="Not available yet"><i class="fa-solid fa-file-pdf"></i> PDF</span>}
+									{p.doi
+										? <a class={btn} href={p.doi} target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i> DOI</a>
+										: <span class={`${btn} disabled`} aria-disabled="true" title="Not available yet"><i class="fa-solid fa-link"></i> DOI</span>}
+								</div>
+							</div>
+						</details>
+					))}
+				</>
+			))}
 		</div>
 	</div>
 </section>
