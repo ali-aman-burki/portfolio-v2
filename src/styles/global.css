@@ -193,6 +193,9 @@ a.pub-btn:hover { border-color: var(--accent); color: var(--accent); }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--dot-off); }
 .dot.active { background: var(--accent); }
 
+/* equal-height rows so a short last card (Creativity) matches the rest; single column on phones keeps natural heights */
+@media (min-width: 651px) { #skills .grid { grid-auto-rows: 1fr; } }
+
 /* ---------- contact ---------- */
 #contact > .content { min-height: 100vh; padding-bottom: 30px; }
 #contact .sub-container { margin: auto 0; padding-top: 70px; }
@@ -201,10 +204,9 @@ a.pub-btn:hover { border-color: var(--accent); color: var(--accent); }
 .h-text { margin-top: 20px; font-size: 1.4rem; font-weight: 700; color: var(--accent); }
 .c-text { margin-top: 14px; font-size: 1.2rem; font-weight: 500; color: var(--text-muted); }
 .sub-container .links { margin-top: 26px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-.footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); width: 100%; text-align: center; color: var(--text-muted); }
-.footer h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-.footer .small { font-size: .85rem; margin-top: 4px; }
-section > .content > .footer:last-child { margin-bottom: 0; }
+.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); width: 100%; text-align: center; color: var(--text-muted); }
+.site-footer h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.site-footer .small { font-size: .85rem; margin-top: 4px; }
 
 /* ---------- reveal ---------- */
 .js .reveal, .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
@@ -219,5 +221,9 @@ section > .content > .footer:last-child { margin-bottom: 0; }
 	.menu-bar { display: block; }
 	.grid { grid-template-columns: 1fr; }
 	h1 { font-size: 2.1rem; }
+	/* slimmer timeline gutter on phones; line centre stays 8px in, so dots shift by the same 10px */
+	.timeline { padding-left: 24px; }
+	.timeline .yr::before { left: -24px; }
+	.timeline details::before { left: -22px; }
 	.heading::before, .heading::after { display: none; }
 }
