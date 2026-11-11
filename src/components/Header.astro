@@ -12,6 +12,9 @@ import { site } from '../data/site';
 				<a href={s.href} aria-label={s.label} target={s.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"><i class={s.icon}></i></a>
 			))}
 		</div>
+		<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle theme">
+			<i class="fa-solid fa-moon" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i>
+		</button>
 		<button id="menu-bar" class="menu-bar" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
 	</div>
 </header>

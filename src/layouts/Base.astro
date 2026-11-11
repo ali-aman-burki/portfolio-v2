@@ -18,6 +18,14 @@ const description = "Software Researcher passionate about solving real-world pro
 		<meta property="og:site_name" content="Ali Aman" />
 		<link rel="icon" href="/images/logo.png" type="image/png" />
 		<link rel="apple-touch-icon" href="/images/apple-touch-logo.png" />
+		<script is:inline>
+			// runs before first paint so there is no flash; default is light
+			try {
+				document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+			} catch (e) {
+				document.documentElement.dataset.theme = 'light';
+			}
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
@@ -35,6 +43,25 @@ const description = "Software Researcher passionate about solving real-world pro
 		<Header />
 		<main><slot /></main>
 		<script>
+			const root = document.documentElement;
+			const themeBtn = document.getElementById('theme-toggle')!;
+			const syncThemeLabel = () =>
+				themeBtn.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+			syncThemeLabel();
+			themeBtn.addEventListener('click', () => {
+				const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+				const apply = () => {
+					root.dataset.theme = next;
+					try { localStorage.setItem('theme', next); } catch {}
+					syncThemeLabel();
+				};
+				// Cross-fade the whole page as one image so text never blends into its background mid-fade.
+				// Falls back to an instant switch without support or with reduced motion.
+				if (!document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return apply();
+				root.classList.add('theme-switching'); // no per-element transitions under the snapshot
+				document.startViewTransition(apply).finished.finally(() => root.classList.remove('theme-switching'));
+			});
+
 			const header = document.getElementById('header')!;
 			const sidebar = document.getElementById('sidebar')!;
 			const menu = document.getElementById('menu-bar')!;
