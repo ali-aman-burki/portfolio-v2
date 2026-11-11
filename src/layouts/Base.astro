@@ -12,8 +12,8 @@ const description = "Software Researcher passionate about solving real-world pro
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://ali-aman.ca/" />
-		<meta property="og:image" content="/images/og-image.png" />
+		<meta property="og:url" content={new URL("/", Astro.site)} />
+		<meta property="og:image" content={new URL("/images/og-image.png", Astro.site)} />
 		<meta property="og:description" content="My projects and skills showcase." />
 		<meta property="og:site_name" content="Ali Aman" />
 		<link rel="icon" href="/images/logo.png" type="image/png" />

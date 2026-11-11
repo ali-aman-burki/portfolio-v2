@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ali-aman.ca/sitemap-index.xml
