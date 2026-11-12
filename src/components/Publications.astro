@@ -8,11 +8,11 @@ const btn = 'pub-btn';
 		<h1 class="reveal">Publications</h1>
 		<h2 class="description reveal">Research and papers I have authored so far.</h2>
 		<div class="timeline reveal">
-			{publications.map((group, gi) => (
+			{publications.map((group) => (
 				<>
 					<div class="yr">{group.year}</div>
-					{group.items.map((p, i) => (
-						<details open={gi === 0 && i === 0}>
+					{group.items.map((p) => (
+						<details>
 							<summary>
 								<div>
 									<p class="pub-title">{p.title}</p>

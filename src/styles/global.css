@@ -267,16 +267,16 @@ a.pub-btn:hover { border-color: var(--accent); color: var(--accent); transition:
 
 /* ---------- theme toggle ---------- */
 .theme-toggle {
-	display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; margin-left: 6px;
+	display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; margin-left: -6px;
 	border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--text-muted);
 	font-size: 1.05rem; cursor: pointer; box-shadow: var(--shadow); transition: color .2s, border-color .2s, transform .2s;
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
 .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.theme-toggle i { display: block; width: 1em; line-height: 1; text-align: center; transform: translate(1px, 1px); }
-.theme-toggle .fa-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .fa-sun { display: block; }
-:root[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
+.theme-toggle svg { display: block; width: 22px; height: 22px; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 /* theme switch: one cross-fade of the whole page (View Transitions), driven from Base.astro */
 html.theme-switching * { transition: none !important; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; animation-timing-function: ease; }
