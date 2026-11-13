@@ -72,7 +72,8 @@ export const publications: { year: number; items: Publication[] }[] = [
 				type: 'Tool Paper',
 				abstract:
 					"Static analysis tools struggle with Python's dynamic typing, especially in unannotated code, and existing type inference approaches need annotations or large training corpora. We present Typify, a lightweight, usage-driven inference engine that combines symbolic execution, fixpoint analysis and context-matching retrieval, with no training data. It ships as both a command-line tool and a VS Code extension. On ManyTypes4Py and Typilus it beats all static baselines and closely matches hybrid deep learning approaches while running about 10× faster.",
-				// pdf / doi: not public yet
+				pdf: 'https://arxiv.org/pdf/2611.14879',
+				doi: 'https://doi.org/10.48550/arXiv.2611.14879',
 			},
 			{
 				title: 'Typify: A Lightweight Usage-driven Static Analyzer for Precise Python Type Inference',
