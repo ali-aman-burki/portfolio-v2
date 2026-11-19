@@ -76,7 +76,7 @@ const description = "Software Researcher passionate about solving real-world pro
 			};
 			menu.addEventListener('click', () => setSidebar(!sidebar.classList.contains('active')));
 			sidebar.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setSidebar(false)));
-			window.addEventListener('resize', () => window.innerWidth >= 650 && setSidebar(false));
+			window.addEventListener('resize', () => window.innerWidth > 860 && setSidebar(false));
 
 			function update() {
 				header.classList.toggle('active', window.scrollY > 0 || sidebar.classList.contains('active'));
